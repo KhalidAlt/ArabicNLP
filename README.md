@@ -1,2 +1,2 @@
 # ArabicNLP
- This repository contains implementations and illustrative code for arabic NLP
+ This repository contains implementations and tutorials code for arabic NLP.
