@@ -1,19 +1,7 @@
-
-import torch
-import torch.nn as nn
-import numpy as np
-import copy
-
-
-
 import tokenizers
-from tokenizers import ByteLevelBPETokenizer,BertWordPieceTokenizer ,SentencePieceBPETokenizer,decoders,SentencePieceUnigramTokenizer #,CharBPETokenizer
-from tokenizers.pre_tokenizers import Metaspace 
-from tokenizers.decoders import ByteLevel
-from tokenizers.normalizers import NFKC,BertNormalizer
+from tokenizers import SentencePieceBPETokenizer
+from tokenizers.normalizers import BertNormalizer
 from tokenizers import normalizers
-
-
 from pathlib import Path
 
 
@@ -26,6 +14,7 @@ def download_Dataset():
         a string that holds the path of the dataset
     """
 
+    ## replace Path("../dataset/") with your dataset path folder
     paths = [str(x) for x in Path("../dataset/").glob("*.txt")] 
     
     return paths
@@ -88,4 +77,4 @@ trained_tokenizer=train_tokenizer(tokenizer,paths)
 
 # Save the trained tokenizer in the following folder
 
-trained_tokenizer.save_model("arabic")
+trained_tokenizer.save_model("trainedtokenizer")
